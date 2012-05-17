@@ -10,8 +10,11 @@ def can_access(user, page):
     must have access to the group
     """
     page_groups = PageViewGroup.objects.filter(page=page)
-    groups = page_groups.filter(group__in=user.groups.all())
-    return page_groups.count() == 0 or groups.count() > 0
+    if user.is_anonymous():
+        return page_groups.count() == 0
+    else:
+        groups = page_groups.filter(group__in=user.groups.all())
+    return page_groups.count() == 0 or groups.count > 0
 
 """
 @processor_for(Page)
