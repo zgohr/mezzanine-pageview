@@ -13,7 +13,7 @@ setup(
     author_email="zachary.gohr@gmail.com",
     license="MIT",
     description="Group level permission for Page viewing",
-    long_description=open('README').read(),
+    long_description=open('README.md').read(),
     keywords="django, mezzanine, groups, permissions",
     packages=find_packages(),
     setup_requires=("setuptools"),
