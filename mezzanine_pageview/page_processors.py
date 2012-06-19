@@ -14,7 +14,7 @@ def can_access(user, page):
         return page_groups.count() == 0
     else:
         groups = page_groups.filter(group__in=user.groups.all())
-    return page_groups.count() == 0 or groups.count > 0
+    return page_groups.count() == 0 or groups.count() > 0
 
 """
 @processor_for(Page)

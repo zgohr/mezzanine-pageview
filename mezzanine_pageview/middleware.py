@@ -19,4 +19,4 @@ class PageViewMiddleware(object):
                 raise Http404
         except Page.DoesNotExist:
             pass
-        return {}
+        return None
